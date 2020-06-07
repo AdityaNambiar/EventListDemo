@@ -1,5 +1,7 @@
 import React from 'react';
 import Header from './Header'; 
+import EventListGroup from './EventListGroup';
+
 class MainPage extends React.Component {
 	constructor(props){
 		super(props); // recommended.
@@ -120,6 +122,10 @@ class MainPage extends React.Component {
 				  </div>
 				</div>
 
+				{/* 
+					EventListGroup component
+				*/}
+				<EventListGroup />
 			</div>
 		);
 	}
