@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Header from './Header'; 
 class MainPage extends React.Component {
 	constructor(props){
 		super(props); // recommended.
@@ -8,7 +8,7 @@ class MainPage extends React.Component {
 	render() {
 		return(
 			<div className="container"> 
-				
+				<Header />
 			</div>
 		);
 	}
