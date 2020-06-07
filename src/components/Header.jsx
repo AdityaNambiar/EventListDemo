@@ -9,6 +9,8 @@ const Header = (props) => {
 				fontSize: "25px"
 			}}
 		>	
+			<span className="m-2 p-3">Event List</span>
+			{/* a Counter functionality will be added */}
 		</h5>
 	);
 }
