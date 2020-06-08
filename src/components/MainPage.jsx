@@ -73,7 +73,10 @@ class MainPage extends React.Component {
 				      </div>
 				      <div class="modal-body">
 						{/* Event details form */}
-				        <form onSubmit={this.handleSubmit}>
+				        <form 
+				        	method="post" 
+				        	onSubmit={this.handleSubmit}
+				        >
 				        	{/* Event name inputbox */}
 				        	<div className="form-group row">
 				        		<label 
