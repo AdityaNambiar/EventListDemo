@@ -13,7 +13,7 @@ class MainPage extends React.Component {
 			eventVenue: '',
 			eventList: []	
 		}
-		
+
 		// "this" keyword problem sol.: Function binding [ method(1) ]:
 		this.onChange = this.onChange.bind(this);
 	}
@@ -43,6 +43,7 @@ class MainPage extends React.Component {
 		)
 	}
 	render() {
+		const { eventList } = this.state;
 		return(
 			<div className="container"> 
 				<Header />
@@ -164,7 +165,7 @@ class MainPage extends React.Component {
 				{/* 
 					EventListGroup component
 				*/}
-				<EventListGroup />
+				<EventListGroup eventList={ eventList }/>
 			</div>
 		);
 	}
