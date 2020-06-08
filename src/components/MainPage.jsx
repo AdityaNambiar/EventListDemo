@@ -10,18 +10,37 @@ class MainPage extends React.Component {
 			eventName: '',
 			eventSchedule: '',
 			eventDescription: '', 
-			eventVenue: ''
+			eventVenue: '',
+			eventList: []	
 		}
-		// Function binding [ method(1) ]:
+		
+		// "this" keyword problem sol.: Function binding [ method(1) ]:
 		this.onChange = this.onChange.bind(this);
 	}
 	onChange(e) { // e = form event
-		const name = e.target.name;
-		const value = e.target.value;
+		//const name = e.target.name;
+		//const value = e.target.value;
+		// Object destructing syntax:
+		const { name, value } = e.target; 
 		this.setState((prevState) => ({
 				[name]:value // '[name]' is using Computed property name syntax  
 			})
 		)	
+	}
+	// "this" keyword problem sol.: Arrow functions [ method(2) ]:
+	handleSubmit = (e) => {
+		e.preventDefault(); // to prevent reloading which is a default behavior of the button.
+		const { eventName, eventVenue, eventSchedule, eventDescription } = this.state;
+		const eventObj = {
+			eventName: eventName,
+			eventVenue: eventVenue,
+			eventSchedule: eventSchedule,
+			eventDescription: eventDescription
+		}
+		this.setState((prevState) => ({ 
+				eventList: [...prevState.eventList, eventObj]
+			})
+		)
 	}
 	render() {
 		return(
