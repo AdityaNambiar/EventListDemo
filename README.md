@@ -22,3 +22,9 @@ To start the application, perform the following two steps:
 	- You can use any tool any online tool such as 'figma' or offline software such as MS Powerpoint or Adobe Illustrator, Adobe XD etc.
 
 3. Once you are clear with the layout start working on your React components based on the architecture you planned.
+
+
+#### Useful links:
+
+HTML UTF-8 Dingbats reference sheet:
+https://www.w3schools.com/charsets/ref_utf_dingbats.asp

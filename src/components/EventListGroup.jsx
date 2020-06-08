@@ -3,7 +3,7 @@ import EventListItem from './EventListItem';
 const EventListGroup = (props) => {
     const { eventList } = props;
 	return (
-		<div className="col-md-4 mt-5">
+		<div className="row mt-3 ml-0">
 			{ 
 		        // Ternary operator syntax: 
 		        // condition? true-block: false-block
@@ -18,7 +18,7 @@ const EventListGroup = (props) => {
 		          </div>
 		        ):( // False-block: Means there is atleast one event in eventList.
 		        	eventList.map((event, index) => (
-			        		<div>
+			        		<div className="col-md-4 mt-5">
 				        		<EventListItem 
 				        			key = { index }
 				        			eventList = { event } 
