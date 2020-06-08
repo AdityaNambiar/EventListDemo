@@ -1,7 +1,7 @@
 import React from 'react';
 import EventListItem from './EventListItem';
 const EventListGroup = (props) => {
-    const { eventList } = props;
+    const { eventList, deleteEvent } = props;
 	return (
 		<div className="row mt-3 ml-0">
 			{ 
@@ -21,7 +21,8 @@ const EventListGroup = (props) => {
 			        		<div className="col-md-4 mt-5">
 				        		<EventListItem 
 				        			key = { index }
-				        			eventList = { event } 
+				        			eventList = { event }
+				        			deleteEvent = { deleteEvent } 
 				        		/>
 			        		</div>
 		        		)

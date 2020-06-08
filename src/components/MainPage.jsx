@@ -42,6 +42,14 @@ class MainPage extends React.Component {
 			})
 		)
 	}
+	deleteEvent = (eName) => {
+		//console.log("deleteEvent: ", eName);
+		const { eventList } = this.state;
+		const newEventList = eventList.filter( event => event.eventName != eName)
+		this.setState((prevState) => ({ 
+				eventList: newEventList
+		}))
+	}
 	render() {
 		const { eventList } = this.state;
 		return(
@@ -168,7 +176,7 @@ class MainPage extends React.Component {
 				{/* 
 					EventListGroup component
 				*/}
-				<EventListGroup eventList={ eventList }/>
+				<EventListGroup eventList={ eventList } deleteEvent={ this.deleteEvent }/>
 			</div>
 		);
 	}

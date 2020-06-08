@@ -4,7 +4,7 @@ const closeBtnCss = {
 	cursor: "pointer"
 }
 const EventListitem = (props) => {
-	const { eventList } = props;
+	const { eventList, deleteEvent } = props;
 	return (
 		<div className="card">
 			<div className="card-header m-1 row justify-content-between">
@@ -12,6 +12,7 @@ const EventListitem = (props) => {
 				<span 
 					className="text-dark"
 					style={ closeBtnCss }
+					onClick={() => deleteEvent(eventList.eventName)}
 				>
 					&#x2715;
 				</span>
