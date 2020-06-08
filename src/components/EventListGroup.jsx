@@ -18,9 +18,8 @@ const EventListGroup = (props) => {
 		          </div>
 		        ):( // False-block: Means there is atleast one event in eventList.
 		        	eventList.map((event, index) => (
-			        		<div className="col-md-4 mt-5">
+		        		 	<div key={ index } className="col-md-4 mt-5">
 				        		<EventListItem 
-				        			key = { index }
 				        			eventList = { event }
 				        			deleteEvent = { deleteEvent } 
 				        		/>

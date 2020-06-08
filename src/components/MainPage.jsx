@@ -45,7 +45,7 @@ class MainPage extends React.Component {
 	deleteEvent = (eName) => {
 		//console.log("deleteEvent: ", eName);
 		const { eventList } = this.state;
-		const newEventList = eventList.filter( event => event.eventName != eName)
+		const newEventList = eventList.filter( event => event.eventName !== eName)
 		this.setState((prevState) => ({ 
 				eventList: newEventList
 		}))
@@ -54,14 +54,14 @@ class MainPage extends React.Component {
 		const { eventList } = this.state;
 		return(
 			<div className="container"> 
-				<Header />
+				<Header noOfEvents={ eventList.length } />
 				{/*
 					Button-triggered Modal for creating events
 				*/}
 
 				<button 
 					type="button" 
-					class="btn btn-primary mt-3" 
+					className="btn btn-primary mt-3" 
 					data-toggle="modal" 
 					data-target="#exampleModal"
 				>
@@ -69,17 +69,17 @@ class MainPage extends React.Component {
 				</button>
 
 				{/* Modal */}
-				<div class="modal fade" id="exampleModal" tabindex="-1" 
+				<div className="modal fade" id="exampleModal" tabIndex="-1" 
 					 role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				  <div class="modal-dialog">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <h5 class="modal-title" id="exampleModalLabel">Event Details</h5>
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <div className="modal-dialog">
+				    <div className="modal-content">
+				      <div className="modal-header">
+				        <h5 className="modal-title" id="exampleModalLabel">Event Details</h5>
+				        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
 				          <span aria-hidden="true">&times;</span>
 				        </button>
 				      </div>
-				      <div class="modal-body">
+				      <div className="modal-body">
 						{/* Event details form */}
 				        <form 
 				        	method="post" 
@@ -88,7 +88,7 @@ class MainPage extends React.Component {
 				        	{/* Event name inputbox */}
 				        	<div className="form-group row">
 				        		<label 
-				        			for="eventName" 
+				        			htmlFor="eventName" 
 				        			className="col-sm-3 col-form-label"
 				        		> 
 				        			Name: 
@@ -107,7 +107,7 @@ class MainPage extends React.Component {
 							{/* Event Date & Time inputbox */}
 				        	<div className="form-group row">
 				        		<label 
-				        			for="eventSchedule" 
+				        			htmlFor="eventSchedule" 
 				        			className="col-sm-3 col-form-label"
 				        		> 
 				        			Date & Time: 
@@ -125,7 +125,7 @@ class MainPage extends React.Component {
 				        	{/* Event venue inputbox */}
 				        	<div className="form-group row">
 		                      <label
-		                        for="eventVenue"
+		                        htmlFor="eventVenue"
 		                        className="col-sm-3 col-form-label"
 		                      >
 		                        Venue:
@@ -144,7 +144,7 @@ class MainPage extends React.Component {
 		                	{/* Event Description inputbox */}
 		                	<div className="form-group row">
 		                      <label
-		                        for="eventDescription"
+		                        htmlFor="eventDescription"
 		                        className="col-sm-3 col-form-label"
 		                      >
 		                        Description:

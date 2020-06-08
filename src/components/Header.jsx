@@ -5,7 +5,7 @@ const h5Style = {
 	fontSize: "25px"
 }
 const Header = (props) => {
-	const noOfEvents = 0;
+	const { noOfEvents } = props ;
 	return (
 		<h5
 			className="bg bg-warning"
