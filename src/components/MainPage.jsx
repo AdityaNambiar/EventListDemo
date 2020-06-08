@@ -6,6 +6,22 @@ class MainPage extends React.Component {
 	constructor(props){
 		super(props); // recommended.
 
+		this.state = {
+			eventName: '',
+			eventSchedule: '',
+			eventDescription: '', 
+			eventVenue: ''
+		}
+		// Function binding [ method(1) ]:
+		this.onChange = this.onChange.bind(this);
+	}
+	onChange(e) { // e = form event
+		const name = e.target.name;
+		const value = e.target.value;
+		this.setState((prevState) => ({
+				[name]:value // '[name]' is using Computed property name syntax  
+			})
+		)	
 	}
 	render() {
 		return(
@@ -37,7 +53,7 @@ class MainPage extends React.Component {
 				      </div>
 				      <div class="modal-body">
 						{/* Event details form */}
-				        <form>
+				        <form onSubmit={this.handleSubmit}>
 				        	{/* Event name inputbox */}
 				        	<div className="form-group row">
 				        		<label 
@@ -53,6 +69,7 @@ class MainPage extends React.Component {
 			                          id="eventName"
 			                          name="eventName"
 			                          placeholder="Enter event name"
+			                          onChange={this.onChange}
 			                        />
 			                     </div>
 				        	</div>
@@ -70,6 +87,7 @@ class MainPage extends React.Component {
 			                          className="form-control"
 			                          id="eventSchedule"
 			                          name="eventSchedule"
+			                          onChange={this.onChange}
 			                        />
 			                    </div>
 				        	</div>
@@ -88,6 +106,7 @@ class MainPage extends React.Component {
 		                          id="eventVenue"
 		                          name="eventVenue"
 		                          placeholder="Enter event venue"
+			                      onChange={this.onChange}
 		                        />
 		                      </div>
 		                    </div>
@@ -106,6 +125,7 @@ class MainPage extends React.Component {
 		                          name="eventDescription"
 		                          rows="3"
 		                          placeholder="Enter event description"
+			                      onChange={this.onChange}
 		                        ></textarea>
 		                      </div>
 		                    </div>
